@@ -1,0 +1,10 @@
+h1{
+    color: #000;
+    text-size-adjust: 24;
+    text-align: center;
+}
+*{
+    display: block;
+    justify-content: center;
+    align-items: center;
+}

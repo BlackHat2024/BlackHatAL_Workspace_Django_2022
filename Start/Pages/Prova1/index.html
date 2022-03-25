@@ -9,9 +9,25 @@
   <title>BlackHatAL</title>
 </head>
 <body>
-  <h1>BMW M5</h1>
-  
-  <img src="{% static 'Images/abc.jpg' %}" alt="My image">
-
+  <h1>BlackHatAL</h1>
+  <h2>Access Model</h2>
+  <div>
+    {% if ar %}
+    <table>
+      <thead>
+        <th>Site</th>
+        <th>Date</th>
+      </thead>
+      {% for acc in ar %}
+      <tr>
+        <td>{{acc.name}}</td>
+        <td>{{acc.date}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+    <p>kot</p>
+    {% endif %}
+  </div>
 </body>
 </html>

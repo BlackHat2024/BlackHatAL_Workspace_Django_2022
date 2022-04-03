@@ -1,5 +1,6 @@
 import email
 from django import forms
+from Prova1.models import AppUser
 
 class FormName(forms.Form):
     name = forms.CharField()
@@ -14,3 +15,10 @@ class FormName(forms.Form):
 
         if email != vmail:
             raise forms.ValidationError("MAKE SURE EMAILS MATCH!")
+        
+
+
+class NewUserForm(forms.ModelForm):
+    class Meta():
+        model = AppUser
+        fields = '__all__'

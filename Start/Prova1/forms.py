@@ -1,7 +1,8 @@
 import email
 from django import forms
 from Prova1.models import AppUser
-
+from Prova1.models import UserProfileInfo
+from django.contrib.auth.models import User
 class FormName(forms.Form):
     name = forms.CharField()
     email = forms.EmailField()
@@ -22,3 +23,16 @@ class NewUserForm(forms.ModelForm):
     class Meta():
         model = AppUser
         fields = '__all__'
+        
+class UserForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput())
+
+    class Meta():
+        model = User
+        fields = ('username','email','password')
+
+
+class UserProfileInfoForm(forms.ModelForm):
+    class Meta():
+        model = UserProfileInfo
+        fields = ('portfolio_site','profile_pic')

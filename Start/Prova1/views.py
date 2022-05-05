@@ -53,8 +53,8 @@ def users(request):
     return render(request,'Prova1/form2.html',{'form2':form2})
 
 
-def lrhome(request):
-    return render(request,'Prova1/lrhome.html')
+#def lrhome(request):
+ #   return render(request,'Prova1/lrhome.html')
 def userpage(request):
     return render(request,'Prova1/userpage.html')
 
@@ -69,7 +69,7 @@ def user_logout(request):
     # Log out the user.
     logout(request)
     # Return to homepage.
-    return HttpResponseRedirect(reverse('lrhome'))
+    return HttpResponseRedirect(reverse('userpage'))
 
 def register(request):
 
